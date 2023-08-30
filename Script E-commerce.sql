@@ -3,9 +3,9 @@ CREATE DATABASE ecommerce;
 USE ecommerce;
 
 -- Criando tabelas
--- ====>  Cliente --> Trocando para Consumidor para evitar a palavra reservada CLIENT
-CREATE TABLE consumer(
-	idConsumer INT AUTO_INCREMENT PRIMARY KEY, 
+-- ====>  Cliente --> Trocando para clients para evitar a palavra reservada CLIENT
+CREATE TABLE clients(
+	idClient INT AUTO_INCREMENT PRIMARY KEY, 
     First_name VARCHAR(20),
     Middle_name_Initial VARCHAR(3),
     Last_name VARCHAR(20),
@@ -20,7 +20,7 @@ CREATE TABLE consumer(
     State VARCHAR(20),
     Country VARCHAR(20),   
     -- ----------------------
-    CONSTRAINT unique_cpf_consumer UNIQUE (CPF)
+    CONSTRAINT unique_cpf_clients UNIQUE (CPF)
 );
 -- ====>  Produto
 CREATE TABLE product(
@@ -32,5 +32,18 @@ CREATE TABLE product(
     Product_description VARCHAR(45),
     Product_rate FLOAT DEFAULT 0
 );
--- ====>  Pedido
+-- ====>  Pedido --> Trocando para orders para evitar a palavra reservada ORDER
+CREATE TABLE orders(
+	idOrder INT AUTO_INCREMENT PRIMARY KEY,
+    idOrder_client INT,
+    Order_status ENUM('Em andamento', 'Processando', 'Enviado', 'Entregue') NOT NULL,
+    Order_description VARCHAR(255),
+    Order_shipping FLOAT DEFAULT 25,
+	
+    CONSTRAINT fk_order_client FOREIGN KEY (idOrder_client) REFERENCES clients(idClient)
+);
+-- ====> Pagamento 1. Define o método de pagamento, 2. Permite calcular o valor total do pedido via idOrder
 
+
+
+-- ====> Dados Bancários Um cliente pode ter vários dados bancários, um dado bancário só pode pertencer a um cliente.
