@@ -1,0 +1,1 @@
+-- Criando Banco de Dados para cenário de E-commerce
