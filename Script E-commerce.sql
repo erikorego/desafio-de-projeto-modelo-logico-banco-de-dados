@@ -20,12 +20,13 @@ CREATE TABLE clients (
     country VARCHAR(20),
     CONSTRAINT unique_cpf_clients UNIQUE (CPF)
 );
+
 ALTER TABLE clients AUTO_INCREMENT = 1;
 -- ====>  Produto
 CREATE TABLE product (
     idProduct INT AUTO_INCREMENT PRIMARY KEY,
     product_name VARCHAR(15) NOT NULL,
-    age_rating BOOL DEFAULT FALSE,
+    age_rating BOOLEAN DEFAULT FALSE,
     category ENUM('Eletrônicos', 'Informática', 'Vestuário', 'Brinquedos', 'Movéis'),
     product_value FLOAT NOT NULL,
     product_description VARCHAR(45),
@@ -107,7 +108,6 @@ CREATE TABLE seller (
     CONSTRAINT unique_seller_CNPJ UNIQUE (seller_CNPJ),
     CONSTRAINT unique_supplier_CPF UNIQUE (seller_CPF)    
 );
-
  
  ALTER TABLE seller AUTO_INCREMENT = 1;
  
