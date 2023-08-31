@@ -101,7 +101,7 @@ CREATE TABLE seller (
     idSeller INT AUTO_INCREMENT PRIMARY KEY,
     seller_corporate_name VARCHAR(45) NOT NULL,
     seller_CNPJ CHAR(15),
-    seller_CPF CHAR(9),
+    seller_CPF CHAR(11),
     trading_name VARCHAR(45),
     location VARCHAR(45),
     CONSTRAINT unique_seller_corporate_name UNIQUE (seller_corporate_name),

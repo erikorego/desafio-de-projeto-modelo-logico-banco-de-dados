@@ -9,7 +9,7 @@ VALUES						(null,'Tiago', 'P', 'Silva', '89732567291','1987-02-28','Clodoaldo F
                             (null,'Mateus', 'L', 'Costa', '31642943212','2002-09-21',' Nossa Senhora da Escada',7516,'Aguazinha', 41973773, 'Olinda', 'BA', 'Brasil'),
                             (null,'Nadia', 'M', 'Cavalcanti', '58973724390','1972-03-25','Avenida ABD',547,'Centro', 89050145, 'Diadema', 'SP', 'Brasil'),
                             (null,'André', 'T', 'Santos', '73318679463','1980-04-14','Alameda A',4638,'Fonseca', 92000654, 'Niterói', 'RJ', 'Brasil'),
-                            (null,'Max', 'R', 'Dias', '16244708874','1974-06-05','Raposo Tavares',5421,'Ipiranga',61628087 , 'São José dos Campos', 'SP', 'Brasil'),
+                            (null,'Joycis', 'R', 'Borges', '16244708874','1974-06-05','Raposo Tavares',5421,'Ipiranga',61628087 , 'São José dos Campos', 'SP', 'Brasil'),
                             (null,'Marcela', 'A', 'Ferreira', '49062583907','1973-01-22','Sete de Setembro',2934,'Porenquanto', 42600416, 'Teresina', 'PI', 'Brasil'),
                             (null,'Paulo', 'O', 'Freitas', '23032982303','1985-07-05','Ajuricaba',4016,'Vila Amazonas', 32940840, 'Manaus', 'AM', 'Brasil');
 
@@ -108,3 +108,92 @@ VALUES 				(NULL, 1, '9999-0','18764-5', 'Corrente', TRUE, 5000),
                     (NULL, 9, '2536-9', '44390-7', 'Poupança', NULL, NULL),
                     (NULL, 10,  NULL, NULL, NULL, NULL, NULL),
                     (NULL, 11, '4022-6', '74188-8', 'Corrente', TRUE, 60000);
+                    
+-- ====> storage
+INSERT INTO product_storage
+VALUES 				(NULL, 'MA'),
+					(NULL, 'AM'),
+                    (NULL, 'SP'),
+                    (NULL, 'PR'),
+                    (NULL, 'MS');
+
+-- ====> supplier
+INSERT INTO supplier
+VALUES 				(NULL, '625194043525392', 'Eletronicos_LTDA', '89-366528545'),
+					(NULL, '764956745561404', 'Infantil & CIA', '18-530212733'),
+                    (NULL, '165910064945528', 'Soluções em Informática', '18-990239240'),
+                    (NULL, '165563872805518', 'Guadalajara', '78-802817327'),
+                    (NULL, '661774463497449', 'Movéis & Importados', '55-377634023');
+
+-- ====> seller
+INSERT INTO seller
+VALUES				(NULL, 'Antonio Variedades EIRELI', '606766555171936', NULL, 'Toinho Variedades', 'AM'),
+					(NULL, 'Gustavo P Freitas', NULL, '89266723251', NULL, 'PI'),
+                    (NULL, 'SAUINE EIRELI', '511654470714077', NULL, 'Saul Informática', 'SP'),
+                    (NULL, 'F4 Importados LTDA', '281040256072165', NULL, 'Paulinho Importados', 'SP'),
+                    (NULL, 'Albert S. Santos', NULL, '35646167582', NULL, 'MA'),
+                    (NULL, 'Vitoria Fagundes Colecionaveis LTDA', '218107558650683', NULL, 'Arena Games', 'PR'),
+                    (NULL, 'Jairo M Estranho', NULL, '13161757169', NULL, 'RS'),
+                    (NULL, 'Rudah Araujo Confecções LTDA', '666222588352450', NULL, 'Atacadão do 10', 'RS');
+
+-- ====> product_by_seller
+INSERT INTO product_by_seller
+VALUES 				(1,5, 204),
+					(5,13, 271),
+                    (3,3, 267),
+                    (3,10, 106),
+                    (2,1, 63),
+					(6,10, 113),
+					(2,12, 57),
+					(2,11, 16),
+					(5,6, 282),
+					(8,16, 230),
+					(8,3, 152),
+					(8,11, 244),
+					(7,6, 79),
+					(2,14, 74),
+					(4,16, 286),
+					(6,15, 46),
+					(8,2, 160),
+					(5,12, 14),
+					(1,15, 21),
+					(2,2, 62),
+					(3,5, 181),
+					(3,9, 209),
+					(4,14, 246),
+					(3,14, 228),
+					(5,14, 201),
+					(8,12, 60),
+					(4,4, 210),
+					(7,12, 85),
+					(4,5, 223),
+					(2,6, 14),
+					(1,2, 24),
+					(3,6, 218),
+					(6,9, 248);
+                    
+
+-- ====> product_stock
+INSERT INTO product_stock
+VALUES 				(4,1, 228),
+					(6,2, 6),
+					(1,3, 144),
+					(8,1, 12),
+					(14,2, 60),
+					(13,3, 112),
+					(14,3, 280),
+					(16,5, 64),
+					(2,3, 142),
+					(12,3, 283),
+					(16,3, 285),
+					(15,3, 61),
+					(8,3, 257),
+					(8,2, 111),
+					(5,4, 219),
+					(5,5, 288),
+					(7,3, 101),
+					(16,1, 46),
+					(4,2, 124),
+					(3,2, 252);
+                    
+-- ====> product_stock
