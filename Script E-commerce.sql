@@ -43,8 +43,10 @@ CREATE TABLE orders (
     order_description VARCHAR(255),
     order_shipping FLOAT DEFAULT 25,
     order_date DATE,
+    shipping_code CHAR(8),
     CONSTRAINT fk_order_client FOREIGN KEY (idOrder_client)
-        REFERENCES clients (idClient)
+        REFERENCES clients (idClient),
+	CONSTRAINT unique_shipping_code UNIQUE (shipping_code)
 );
 
 ALTER TABLE orders AUTO_INCREMENT = 1;
@@ -106,7 +108,9 @@ CREATE TABLE seller (
     location VARCHAR(45),
     CONSTRAINT unique_seller_corporate_name UNIQUE (seller_corporate_name),
     CONSTRAINT unique_seller_CNPJ UNIQUE (seller_CNPJ),
-    CONSTRAINT unique_supplier_CPF UNIQUE (seller_CPF)    
+    CONSTRAINT unique_supplier_CPF UNIQUE (seller_CPF),
+    CONSTRAINT unique_category_of_seller CHECK (seller_CNPJ is NULL XOR seller_CPF is NULL)
+
 );
  
  ALTER TABLE seller AUTO_INCREMENT = 1;
